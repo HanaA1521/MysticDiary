@@ -1,63 +1,14 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Secret Diary - by Hana.A</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        #diary-container, #login-container { display: none; }
-        textarea { width: 80%; height: 300px; margin-top: 20px; }
-        button { padding: 10px; margin-top: 10px; cursor: pointer; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secret Diary</title>
 </head>
 <body>
     <h1>Secret Diary - by Hana.A</h1>
-    <div id="login-container">
-        <h2>Enter Password</h2>
-        <input type="password" id="password-input">
-        <button onclick="checkPassword()">Login</button>
-    </div>
-    
-    <div id="diary-container">
-        <h2>Your Secret Diary</h2>
-        <textarea id="diary-text"></textarea>
-        <br>
-        <button onclick="saveDiary()">Save</button>
-        <button onclick="logout()">Logout</button>
-    </div>
-    
-    <script>
-        const correctPassword = "mypassword";  // Change this to your own password
-
-        function checkPassword() {
-            let enteredPassword = document.getElementById("password-input").value;
-            if (enteredPassword === correctPassword) {
-                document.getElementById("login-container").style.display = "none";
-                document.getElementById("diary-container").style.display = "block";
-                loadDiary();
-            } else {
-                alert("Wrong password!");
-            }
-        }
-
-        function saveDiary() {
-            let text = document.getElementById("diary-text").value;
-            localStorage.setItem("diary", text);
-            alert("Diary saved!");
-        }
-
-        function loadDiary() {
-            let savedText = localStorage.getItem("diary");
-            if (savedText) {
-                document.getElementById("diary-text").value = savedText;
-            }
-        }
-
-        function logout() {
-            document.getElementById("diary-container").style.display = "none";
-            document.getElementById("login-container").style.display = "block";
-            document.getElementById("password-input").value = "";
-        }
-    </script>
+    <p>Welcome to my secret diary! Write your thoughts here.</p>
 </body>
 </html>
+
